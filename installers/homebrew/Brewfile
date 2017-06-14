@@ -4,6 +4,7 @@ cask_args appdir: "/Applications"
 # Taps
 tap "caskroom/cask"
 tap "caskroom/fonts"
+tap "caskroom/drivers"
 tap "caskroom/versions"
 tap "homebrew/bundle"
 tap "homebrew/core"
@@ -140,6 +141,20 @@ cask "evernote"
 cask "intellij-idea"
 cask "gpgtools"
 cask "skype"
+cask "gotomeeting"
+cask "jd-gui"
+cask "kindle"
+cask "licecap"
+cask "macpass"
+cask "nvalt"
+cask "obs"
+cask "textexpander"
+cask "tunnelblick"
+cask "unetbootin"
+cask "unrarx"
+cask "visual-studio-code"
+cask "wireshark"
+cask "whatsapp"
 
 # Browsers
 # cask "safari-technology-preview"
@@ -161,6 +176,10 @@ cask "hosts"
 
 # Screensavers
 # cask "ios-saver"
+
+# Drivers
+cask "scansnap-manager-ix500"
+cask "synology-assistant"
 
 # QuickLook plugins
 cask "qlcolorcode"
