@@ -16,7 +16,7 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 # Set delay until repeat (in milliseconds)
 # Long: 120
 # Short: 15
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain InitialKeyRepeat -int 20
 
 # Adjust keyboard brightness in low light
 defaults write com.apple.BezelServices kDim -bool true
@@ -30,10 +30,10 @@ sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Key
 # In windows and dialogs, press Tab to move keyboard focus between:
 # 1 : Text boxes and lists only
 # 3 : All controls
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+#defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Use F1, F2, etc. keys as standard function keys
-defaults write NSGlobalDomain com.apple.keyboard.fnState -bool false
+#defaults write NSGlobalDomain com.apple.keyboard.fnState -bool false
 
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
@@ -48,7 +48,7 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSUserQuotesArray -array '"\""' '"\""' '"'\''"' '"'\''"'
 
 # Correct spelling automatically
-# defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Continuously check spelling in (most) text views
 # defaults write NSGlobalDomain NSAllowContinuousSpellChecking -bool false
@@ -58,7 +58,7 @@ defaults write NSGlobalDomain NSUserQuotesArray -array '"\""' '"\""' '"'\''"' '"
 # defaults write -g NSTextInsertionPointBlinkPeriodOff -float 1000
 
 # Prevent accidental Power button presses from sleeping system
-defaults write com.apple.loginwindow PowerButtonSleepsSystem -bool false
+#defaults write com.apple.loginwindow PowerButtonSleepsSystem -bool false
 
 # Keyboard Shortcuts (these are case insensitive)
 # Modifier key legend:

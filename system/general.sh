@@ -42,9 +42,9 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
 # PlistBuddy approach appears broken:
 # RecentApplications, RecentDocuments, RecentServers
 #/usr/libexec/PlistBuddy -x -c "Set :RecentApplications:MaxAmount 0" ~/Library/Preferences/com.apple.recentitems.plist
-for category in 'applications' 'documents' 'servers'; do
-   /usr/bin/osascript -e "tell application \"System Events\" to tell appearance preferences to set recent $category limit to 10"
-done
+#for category in 'applications' 'documents' 'servers'; do
+#   /usr/bin/osascript -e "tell application \"System Events\" to tell appearance preferences to set recent $category limit to 10"
+#done
 
 # Allow Handoff between this Mac and your iCloud devices
 defaults write ~/Library/Preferences/ByHost/com.apple.coreservices.useractivityd ActivityAdvertisingAllowed -bool true

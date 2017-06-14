@@ -8,17 +8,17 @@
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
 # Automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
+#defaults write com.apple.dock mru-spaces -bool false
 
 # When switching to an application, switch to a Space with open windows for the application
-defaults write NSGlobalDomain AppleSpacesSwitchOnActivate -bool true
+#defaults write NSGlobalDomain AppleSpacesSwitchOnActivate -bool true
 
 # Group windows by application in Mission Control
 # (i.e. use the old Exposé behavior instead)
-defaults write com.apple.dock expose-group-by-app -bool false
+#defaults write com.apple.dock expose-group-by-app -bool false
 
-# Disaplays have sererate Spaces
-defaults write com.apple.spaces spans-displays -bool false
+# Displays have separate Spaces
+#defaults write com.apple.spaces spans-displays -bool false
 
 # Disable the Launchpad gesture (pinch with thumb and three fingers)
 #defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
@@ -27,10 +27,10 @@ defaults write com.apple.spaces spans-displays -bool false
 find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
 
 # Add iOS Simulator to Launchpad
-if [ -e "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" ]; then
-    sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" \
-                "/Applications/Simulator.app"
-fi
+#if [ -e "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" ]; then
+#    sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app" \
+#                "/Applications/Simulator.app"
+#fi
 
 # Hot corners
 #  0 : NOP

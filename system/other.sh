@@ -21,30 +21,30 @@ defaults write com.apple.systemuiserver menuExtras -array \
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # Opening and closing speed of Quick Look windows
-defaults write NSGlobalDomain QLPanelAnimationDuration -float 0
+#defaults write NSGlobalDomain QLPanelAnimationDuration -float 0
 
 # Opening and closing window animations
-defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+#defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
 # Disable animated focus ring
-defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
+#defaults write NSGlobalDomain NSUseAnimatedFocusRing -bool false
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
 
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+#/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
 # Display ASCII control characters using caret notation in standard text views
 # Try e.g. `cd /tmp; unidecode "\x{0000}" > cc.txt; open -e cc.txt`
-defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
+#defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
 
 # Disable Resume system-wide
-defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
+#defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
 # Disable automatic termination of inactive apps
-defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
+#defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 
 # Rubber-band scrolling (doesn't affect web views)
 # defaults write NSGlobalDomain NSScrollViewRubberbanding -bool false
@@ -56,7 +56,7 @@ defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
 #defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Set Help Viewer windows to non-floating mode
-defaults write com.apple.helpviewer DevMode -bool true
+#defaults write com.apple.helpviewer DevMode -bool true
 
 # Fix for the ancient UTF-8 bug in QuickLook (http://mths.be/bbo)
 # Commented out, as this is known to cause problems in various Adobe apps :(
@@ -110,20 +110,20 @@ defaults write com.apple.screencapture name -string "screen"
 defaults -currentHost write com.apple.ImageCapture2 HotPlugActionPath -string ''
 
 # Link hidden applications
-for app in /System/Library/CoreServices/Applications/* \
-           /Applications/Xcode.app/Contents/Applications/* \
-           /Applications/Xcode.app/Contents/Developer/Applications/*; do
-  sudo ln -s "$app" /Applications/Utilities/
-done
+#for app in /System/Library/CoreServices/Applications/* \
+#           /Applications/Xcode.app/Contents/Applications/* \
+#           /Applications/Xcode.app/Contents/Developer/Applications/*; do
+#  sudo ln -s "$app" /Applications/Utilities/
+#done
 
-hidden_apps=(
-  'Network Diagnostics'
-)
-
-for app in "${hidden_apps[@]}"; do
-  sudo ln -s "/System/Library/CoreServices/${app}.app" \
-             "/Applications/Utilities/${app}.app"
-done
+#hidden_apps=(
+#  'Network Diagnostics'
+#)
+#
+#for app in "${hidden_apps[@]}"; do
+#  sudo ln -s "/System/Library/CoreServices/${app}.app" \
+#             "/Applications/Utilities/${app}.app"
+#done
 
  # Link hidden prefPanes
 sudo ln -s '/System/Library/CoreServices/Applications/Archive Utility.app/Contents/Resources/Archives.prefPane' \
@@ -136,7 +136,7 @@ sudo ln -s '/System/Library/Frameworks/JavaScriptCore.framework/Versions/Current
            '/usr/local/bin/jsc'
 
 # Enable Folder Actions
-defaults write com.apple.FolderActionsDispatcher folderActionsEnabled -bool false
+#defaults write com.apple.FolderActionsDispatcher folderActionsEnabled -bool false
 
 ###############################################################################
 # Default Applications                                                        #

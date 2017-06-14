@@ -79,42 +79,43 @@ system_preferences=(
   git
 
   general
-  desktop-screen-saver
+#  desktop-screen-saver
   dock
   mission-control
   language-region
   security-privacy
   spotlight
-  notifications
-
+#  notifications
+#
   displays
-  energy-saver
+#  energy-saver
   keyboard
-  # mouse
-  trackpad
+#  # mouse
+#  trackpad
   printers-scanners
   sound
-  # startup-disk
-
+#  # startup-disk
+#
   icloud
-  # internet-accounts
-  extensions
+#  # internet-accounts
+#  extensions
   app-store
-  # network
+#  # network
   bluetooth
   sharing
-
+#
   users-groups
-  # parental-controls
+#  # parental-controls
   siri
-  date-time
+#  date-time
   time-machine
   accessibility
-
+#
   other
-  dashboard
-  cds-dvds
-  # ssd
+
+#  dashboard
+#  cds-dvds
+#  # ssd
 )
 
 for pane in "${system_preferences[@]}"; do
@@ -138,23 +139,23 @@ set_prefs mail "Mail"
 set_prefs messages "Messages"
 set_prefs quicktime "QuickTime Player"
 set_prefs safari "Safari" "WebKit"
-set_prefs terminal # Do not kill "Terminal" - it will stop script execution
+#set_prefs terminal # Do not kill "Terminal" - it will stop script execution
 set_prefs textedit "TextEdit"
 
 # Third Party Apps
-set_prefs adobe
-set_prefs divvy "Divvy"
-set_prefs dropbox "Dropbox"
+#set_prefs adobe
+#set_prefs divvy "Divvy"
+#set_prefs dropbox "Dropbox"
 set_prefs google-chrome "Google Chrome"
 set_prefs qlcolorcode "Quick Look"
 set_prefs sublime-text "Sublime Text"
-set_prefs transmission "Transmission"
+#set_prefs transmission "Transmission"
 
 
 # Run
-get_open_affected_apps
+# get_open_affected_apps
 source_prefs
 quit_apps
 
-prompt_restart
+#prompt_restart
 

@@ -23,10 +23,10 @@ defaults write com.apple.dock mineffect -string 'scale'
 defaults write NSGlobalDomain AppleWindowTabbingMode -string 'always'
 
 # Dock orientation: 'left', 'bottom', 'right'
-# defaults write com.apple.dock 'orientation' -string 'bottom'
+defaults write com.apple.dock 'orientation' -string 'left'
 
 # Dock pinning: 'start', 'middle', 'end'
-# defaults write com.apple.dock pinning -string 'middle'
+defaults write com.apple.dock pinning -string 'middle'
 
 # Lock the Dock position
 # defaults write com.apple.dock position-immutable -bool true
@@ -41,13 +41,13 @@ defaults write NSGlobalDomain AppleActionOnDoubleClick -string "Maximize"
 defaults write com.apple.dock minimize-to-application -bool true
 
 # Animate opening applications
-defaults write com.apple.dock launchanim -bool false
+#defaults write com.apple.dock launchanim -bool false
 
 # Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+#defaults write com.apple.dock autohide -bool true
 
 # Auto-hide delay
-defaults write com.apple.dock autohide-delay -float 0
+#defaults write com.apple.dock autohide-delay -float 0
 
 # Auto-hide animation duration
 # defaults write com.apple.dock autohide-time-modifier -float 0
@@ -65,7 +65,7 @@ defaults write com.apple.dock mouse-over-hilite-stack -bool true
 defaults write com.apple.dock 'checked-for-launchpad' -bool true
 
 # Remove all (default) app icons from the Dock
-defaults write com.apple.dock persistent-apps -array
+# defaults write com.apple.dock persistent-apps -array
 
 # Lock the Dock contents
 # defaults write com.apple.dock contents-immutable -bool true

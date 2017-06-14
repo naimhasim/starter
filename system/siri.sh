@@ -8,12 +8,12 @@
 defaults write com.apple.assistant.support "Assistant Enabled" -bool true
 
 # Language
-defaults write com.apple.assistant.backedup "Session Language" -string "en-US"
+#defaults write com.apple.assistant.backedup "Session Language" -string "en-US"
 
 # Voice Feedback
 # 2 : On
 # 3 : Off
-defaults write com.apple.assistant.backedup "Use device speaker for TTS" -int 3
+#defaults write com.apple.assistant.backedup "Use device speaker for TTS" -int 3
 
 # Keybord shortcut
 # 0 : Off
