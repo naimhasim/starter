@@ -137,7 +137,9 @@ cask "postman"
 cask "sublime-text"
 cask "tunnelblick"
 cask "evernote"
-
+cask "intellij-idea"
+cask "gpgtools"
+cask "skype"
 
 # Browsers
 # cask "safari-technology-preview"
