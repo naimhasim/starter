@@ -156,6 +156,7 @@ cask "unrarx"
 cask "visual-studio-code"
 cask "wireshark"
 cask "whatsapp"
+cask "graphiql"
 
 # Browsers
 # cask "safari-technology-preview"
