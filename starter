@@ -76,6 +76,8 @@ function prompt_restart {
 
 # System Prefrences
 system_preferences=(
+  git
+
   general
   desktop-screen-saver
   dock
