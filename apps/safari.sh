@@ -40,7 +40,7 @@ defaults write com.apple.Safari SavePanelFileFormat -int 0
 # 0: Manually
 # 1: When Safari Quits
 # 2: Upon Successful Download
-defaults write com.apple.Safari DownloadsClearingPolicy -int 2
+defaults write com.apple.Safari DownloadsClearingPolicy -int 1
 
 # Prevent Safari from opening "safe" files automatically after downloading
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false

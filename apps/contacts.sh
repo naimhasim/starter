@@ -13,7 +13,7 @@
 defaults write com.apple.AddressBook ABNameDisplay -bool false
 
 # Sort by
-defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingLastName sortingFirstName"
+defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingFirstName sortingLastName"
 
 # Short name format
 # 0: Full Name
@@ -27,7 +27,7 @@ defaults write com.apple.AddressBook ABShortNameStyle -int 2
 defaults write com.apple.AddressBook ABShortNamePrefersNickname -bool true
 
 # Address format
-defaults write com.apple.AddressBook ABDefaultAddressCountryCode -string "us"
+defaults write com.apple.AddressBook ABDefaultAddressCountryCode -string "my"
 
 # vCard Format
 # falsec: 3.0

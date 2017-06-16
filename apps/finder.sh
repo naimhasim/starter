@@ -5,7 +5,7 @@
 ###############################################################################
 
 # Create user `Sites` directory
-mkdir -p "$HOME/Sites"
+#mkdir -p "$HOME/Sites"
 
 # Show user `Library` folder
 chflags nohidden "${HOME}/Library"
@@ -53,7 +53,7 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool false
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # File extension change warning
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool true
 
 # Arrange by
 # Kind, Name, Application, Date Last Opened,
@@ -107,7 +107,7 @@ done
 # After configuring preferred view style, clear all `.DS_Store` files
 # to ensure settings are applied for every directory
 # sudo find / -name ".DS_Store" --delete
-defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
@@ -144,7 +144,7 @@ defaults write com.apple.finder NewWindowTarget -string 'PfHm'
 #defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
 
 # Warning before emptying Trash
-defaults write com.apple.finder WarnOnEmptyTrash -bool false
+defaults write com.apple.finder WarnOnEmptyTrash -bool true
 
 # Empty Trash securely
 defaults write com.apple.finder EmptyTrashSecurely -bool false
@@ -153,7 +153,7 @@ defaults write com.apple.finder EmptyTrashSecurely -bool false
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 # Desktop Enabled
-defaults write com.apple.finder CreateDesktop -bool false
+#defaults write com.apple.finder CreateDesktop -bool false
 
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
