@@ -49,6 +49,7 @@ brew "sbt"
 brew "maven"
 brew "zinc"
 brew "poppler"
+brew "antigen"
 
 # Other useful tools
 brew "highlight" # https://developer.atlassian.com/blog/2015/08/beautiful-presentations-with-highlight/
@@ -205,6 +206,23 @@ cask "font-dejavu-sans"
 cask "font-league-gothic"
 cask "font-liberation-sans"
 cask "font-symbola"
+cask "font-anonymous-pro"
+cask "font-dejavu-sans-mono-for-powerline"
+cask "font-droid-sans"
+cask "font-droid-sans-mono font-droid-sans-mono-for-powerline"
+cask "font-meslo-lg font-input"
+cask "font-inconsolata font-inconsolata-for-powerline"
+cask "font-liberation-mono font-liberation-mono-for-powerline"
+cask "font-liberation-sans"
+cask "font-meslo-lg"
+cask "font-nixie-one"
+cask "font-office-code-pro"
+cask "font-pt-mono"
+cask "font-raleway font-roboto"
+cask "font-source-code-pro font-source-code-pro-for-powerline"
+cask "font-source-sans-pro"
+cask "font-ubuntu font-ubuntu-mono-powerline"
+
 
 # MAS applications
 mas "Marked 2", id: 890031187

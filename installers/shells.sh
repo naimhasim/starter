@@ -16,6 +16,4 @@ sudo dscl . -create /Users/$USER UserShell $(which zsh)
 mkdir -p ~/.antigen
 mkdir -p ~/.antigen/themes
 
-# Download Antigen
-curl -L git.io/antigen > ~/.antigen/antigen.zsh
-zsh ~/.antigen/antigen.zsh
+cp system/shells/zshrc ~/.zshrc
