@@ -222,6 +222,7 @@ cask "font-raleway font-roboto"
 cask "font-source-code-pro font-source-code-pro-for-powerline"
 cask "font-source-sans-pro"
 cask "font-ubuntu font-ubuntu-mono-powerline"
+cask "font-meslo-for-powerline"
 
 
 # MAS applications
