@@ -83,4 +83,4 @@ export LC_ALL="en_US.UTF-8"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PATH="/usr/local/mysql/bin:$HOME/.yarn/bin:$PATH"export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/mysql/bin:$HOME/.yarn/bin:$PATH"

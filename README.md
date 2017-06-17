@@ -34,3 +34,5 @@ TODO/Manual
 ===========
 
 - Canon MF Toolbox for mac
+- MySQL DMG (due to Oracle license)
+
