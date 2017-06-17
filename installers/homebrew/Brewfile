@@ -50,6 +50,7 @@ brew "maven"
 brew "zinc"
 brew "poppler"
 brew "antigen"
+brew "awscli"
 
 # Other useful tools
 brew "highlight" # https://developer.atlassian.com/blog/2015/08/beautiful-presentations-with-highlight/
@@ -158,6 +159,7 @@ cask "visual-studio-code"
 cask "wireshark"
 cask "whatsapp"
 cask "graphiql"
+cask "ngrok"
 
 # Browsers
 # cask "safari-technology-preview"
