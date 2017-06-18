@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ###############################################################################
-# Accessibility                                                               #
+# Accessibility
 ###############################################################################
 
 # Enable access for assistive devices
@@ -65,14 +65,16 @@ defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKe
 
 # Speaking Rate
 # Set as a multidimensional array:
-#   the 1st value is the SelectedVoiceCreator
-#   the 2nd value is the SelectedVoiceID
-#   the 3rd value is the speaking rate
+#   The 1st value is the SelectedVoiceCreator
+#   The 2nd value is the SelectedVoiceID
+#   The 3rd value is the speaking rate
 # Slow   : 90
 # Normal : 175
 # Fast   : 350
-#defaults write com.apple.speech.voice.prefs VoiceRateDataArray -array '(
-#  1835364215,
-#  201,
-#  350
-#)'
+#plutil -replace VoiceRateDataArray -json '[
+#  [
+#    1835364215,
+#    201,
+#    350
+#  ]
+#]' ~/Library/Preferences/com.apple.speech.voice.prefs.plist
