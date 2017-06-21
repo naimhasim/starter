@@ -90,6 +90,7 @@ brew "rbenv" # Ruby
 brew "nvm"
 # brew "node" # Also installs `npm`
 brew "yarn" # Faster than npm
+brew "rancher-cli"
 
 # Network tools
 brew "namebench"

@@ -37,6 +37,7 @@ setup_plugins() {
     antigen bundle python
     antigen bundle brew
     antigen bundle brew cask
+    antigen bundle rancher-zsh-completion
 }
 
 setup_theme() {
