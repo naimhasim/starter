@@ -76,8 +76,6 @@ function prompt_restart {
 
 # System Prefrences
 system_preferences=(
-  git
-
   general
 #  desktop-screen-saver
   dock
@@ -150,6 +148,7 @@ set_prefs google-chrome "Google Chrome"
 set_prefs qlcolorcode "Quick Look"
 #set_prefs sublime-text "Sublime Text"
 #set_prefs transmission "Transmission"
+set_prefs git
 
 
 # Run
