@@ -9,8 +9,8 @@ defaults write com.google.Chrome ExtensionInstallSources -array "https://gist.gi
 defaults write com.google.Chrome.canary ExtensionInstallSources -array "https://gist.githubusercontent.com/" "http://userscripts.org/*"
 
 # Disable backswipe
-defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
-defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
+#defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
+#defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
 
 # Use the system-native print preview dialog
 defaults write com.google.Chrome DisablePrintPreview -bool true

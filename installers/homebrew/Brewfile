@@ -92,6 +92,7 @@ brew "nvm"
 brew "yarn" # Faster than npm
 brew "rancher-cli"
 brew "rancher-compose"
+brew "jq"
 
 # Network tools
 brew "namebench"
