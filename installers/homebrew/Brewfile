@@ -93,6 +93,7 @@ brew "yarn" # Faster than npm
 brew "rancher-cli"
 brew "rancher-compose"
 brew "jq"
+brew "typesafe-activator"
 
 # Network tools
 brew "namebench"
