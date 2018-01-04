@@ -51,6 +51,8 @@ brew "zinc"
 brew "poppler"
 brew "antigen"
 brew "awscli"
+brew "golang"
+brew "glide"
 
 # Other useful tools
 brew "highlight" # https://developer.atlassian.com/blog/2015/08/beautiful-presentations-with-highlight/

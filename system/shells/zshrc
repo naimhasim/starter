@@ -61,7 +61,8 @@ setup_theme() {
 
 setup_plugins && setup_theme && antigen apply
 
-export PATH=/usr/local/bin:$PATH
+export GOPATH=$HOME/dev/go-workspace
+export PATH=/usr/local/bin:$GOPATH/bin:$PATH
 export MAVEN_OPTS="-Xmx2048m -XX:+CMSClassUnloadingEnabled -XX:+UseCompressedOops"
 export LEARNDOT_CONFIG="/Users/faizhasim/dev/stash/unicorn-scala/config/development.yml"
 export JAVA_HOME=$(/usr/libexec/java_home)
