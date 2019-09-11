@@ -10,6 +10,9 @@ if ! hash brew 2>/dev/null; then
 fi
 
 # Schedule Homebrew Updates
+# This is better than HOMEBREW_AUTO_UPDATE_SECS
+# Consider disabling auto-updates with
+# export HOMEBREW_NO_AUTO_UPDATE=1
 cron_entry='0 */6 * * * /usr/local/bin/brew update &>/dev/null'
 if ! crontab -l | fgrep "$cron_entry" >/dev/null; then
   (crontab -l 2>/dev/null; echo "$cron_entry") | \
@@ -25,7 +28,7 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until the script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Make sure we arere using the latest Homebrew
+# Make sure we are using the latest Homebrew
 brew update
 
 # Upgrade existing packages
@@ -34,8 +37,5 @@ brew upgrade
 # Install CLI tools & GUI applications
 brew bundle --file=installers/homebrew/Brewfile
 
-# Remove outdated versions from the cellar
+# Remove outdated versions from the cellar including casks
 brew cleanup && brew prune
-
-# Remove outdated cask versions from the cellar
-brew cask cleanup

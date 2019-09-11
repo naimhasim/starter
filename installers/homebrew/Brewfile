@@ -18,6 +18,7 @@ cask "xquartz"
 # Note: Don't forget to add shells to `/etc/shells` before running `chsh`.
 brew "bash"
 brew "zsh"
+brew "antigen"
 
 # CLI utilities
 # Note: This replaces some (outdated) built-in macOS utilities with the GNU equivalents
@@ -73,11 +74,13 @@ brew "gzip"
 # Mac OS tools
 brew "duti" # Required for setting preferences (https://github.com/moretension/duti/)
 brew "imagesnap"
+brew "mackup"
 brew "tccutil" # Required for setting preferences
 brew "trash"
 brew "wifi-password"
 
 # Server stack
+# brew "httpd"
 brew "dnsmasq"
 brew "percona-server"
 
@@ -92,8 +95,6 @@ brew "rbenv" # Ruby
 brew "nvm"
 # brew "node" # Also installs `npm`
 brew "yarn" # Faster than npm
-brew "rancher-cli"
-brew "rancher-compose"
 brew "jq"
 brew "typesafe-activator"
 
@@ -191,6 +192,9 @@ cask "hosts"
 # Drivers
 cask "scansnap-manager-ix500"
 cask "synology-assistant"
+
+# Services
+cask "markdown-service-tools"
 
 # QuickLook plugins
 cask "qlcolorcode"
