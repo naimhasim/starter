@@ -11,8 +11,8 @@ tap "homebrew/core"
 
 # Cask dependencies
 brew "mas"
-cask "java"
-cask "xquartz"
+# cask "java"
+# cask "xquartz"
 
 # Shells
 # Note: Don't forget to add shells to `/etc/shells` before running `chsh`.
@@ -44,16 +44,14 @@ brew "ack"
 brew "findutils"
 brew "gnu-tar"
 brew "zsh-completions"
-brew "scala"
-brew "groovy"
-brew "sbt"
-brew "maven"
-brew "zinc"
-brew "poppler"
+# brew "scala"
+# brew "groovy"
+# brew "sbt"
+# brew "maven"
+# brew "zinc"
+# brew "poppler"
 brew "antigen"
 brew "awscli"
-brew "golang"
-brew "glide"
 
 # Other useful tools
 brew "highlight" # https://developer.atlassian.com/blog/2015/08/beautiful-presentations-with-highlight/
@@ -81,8 +79,8 @@ brew "wifi-password"
 
 # Server stack
 # brew "httpd"
-brew "dnsmasq"
-brew "percona-server"
+# brew "dnsmasq"
+# brew "percona-server"
 
 # Programming languages
 # Installing Python/Ruby with Homebrew is unnecessary,
@@ -239,17 +237,17 @@ cask "font-meslo-for-powerline"
 
 # MAS applications
 mas "Marked 2", id: 890031187
-mas "Day One", id: 1055511498
-mas "Next", id: 896146364
+# mas "Day One", id: 1055511498
+# mas "Next", id: 896146364
 mas "Telegram", id: 747648890
 mas "Twitter", id: 409789998
 mas "Marked 2", id: 890031187
 mas "Pixelmator", id: 407963104
 mas "1Password", id: 443987910
 mas "Fantastical 2", id: 975937182
-mas "ForkLift", id: 412448059
-mas "Airmail 2", id: 918858936
-mas "Microsoft Remote Desktop", id: 715768417
+# mas "ForkLift", id: 412448059
+# mas "Airmail 2", id: 918858936
+# mas "Microsoft Remote Desktop", id: 715768417
 mas "Guidance", id: 412759995
 mas "Slack", id: 803453959
 
