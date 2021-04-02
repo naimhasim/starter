@@ -7,13 +7,13 @@
 # Set appearance
 # Blue     : 1
 # Graphite : 6
-defaults write NSGlobalDomain AppleAquaColorVariant -int 6
+#defaults write NSGlobalDomain AppleAquaColorVariant -int 6
 
 # Highlight color
 # Graphite : `0.780400 0.815700 0.858800`
 # Silver   : `0.776500 0.776500 0.776500`
 # Blue     : `0.709800 0.835300 1.000000`
-defaults write NSGlobalDomain AppleHighlightColor -string '0.780400 0.815700 0.858800'
+#defaults write NSGlobalDomain AppleHighlightColor -string '0.780400 0.815700 0.858800'
 
 # Use Dark menu bar and Dock
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
