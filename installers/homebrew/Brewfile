@@ -9,16 +9,17 @@ tap "homebrew/cask-versions"
 tap "homebrew/bundle"
 tap "homebrew/core"
 tap "joeyhoer/extras"
+tap "acrogenesis/macchanger"
 
 # Cask dependencies
 brew "mas"
-cask "java"
 cask "xquartz"
 
 # Shells
 # Note: Don't forget to add shells to `/etc/shells` before running `chsh`.
 brew "bash"
 brew "zsh"
+brew "zsh-completions"
 brew "antigen"
 
 # CLI utilities
@@ -28,45 +29,66 @@ brew "coreutils"
 brew "curl-openssl"
 #brew "findutils" # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
 brew "git"
+brew "git-lfs"
+brew "gh"
 brew "grep"
-#brew "gnu-sed", args: ["default-names"] # Install GNU `sed`, overwriting the built-in `sed`
-#brew "moreutils" # Install more useful GNU utilities like `sponge`
-#brew "openssh"
-# brew "pv" # http://www.ivarch.com/programs/pv.shtml
-brew "pwgen"
-# brew "ripgrep" # https://github.com/BurntSushi/ripgrep
+brew "gnu-sed" # Install GNU `sed`, overwriting the built-in `sed`
+brew "moreutils" # Install more useful GNU utilities like `sponge`
+brew "openssh"
 brew "rsync"
 brew "screen"
-brew "ssh-copy-id"
+brew "ssh-copy-id", link: true
 brew "tmux"
 brew "tree"
 brew "wget"
 brew "ack"
 brew "findutils"
 brew "gnu-tar"
-brew "zsh-completions"
-brew "scala"
-brew "groovy"
-brew "sbt"
-brew "maven"
-brew "zinc"
-brew "poppler"
-brew "antigen"
-brew "awscli"
-brew "golang"
+cask "session-manager-plugin"
 brew "glide"
+brew "cowsay"
+brew "figlet"
+brew "fortune"
+brew "lolcat"
+brew "starship"
+brew "telnet"
+brew "tldr"
+brew "watch"
+
+# infra as code / cloud / db tools
+brew "awscli"
+brew "awslog"
+brew "aws-es-proxy"
+brew "mydumper"
+brew "mysql-client"
+brew "terraform"
+brew "haproxy"
+brew "dnsmasq", restart_service: true
+
+# dev productivity
+brew "direnv"
+brew "gomplate"
+
+# critical utils
+cask "1password"
+brew "1password-cli"
+
+
+# seek only tools
+brew "seek-jobs/tools/seek_auth"
+brew "seek-jobs/tools/seek_bastion"
+brew "seek-jobs/tools/seek_gantry"
+brew "snyk/tap/snyk"
 
 # Other useful tools
 brew "highlight" # https://developer.atlassian.com/blog/2015/08/beautiful-presentations-with-highlight/
 brew "multimarkdown"
-brew "pandoc"
 brew "reattach-to-user-namespace" # https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
-# brew "xmlstarlet" # http://xmlstar.sourceforge.net/
 
-# Image tools
-brew "ffmpeg", args: ["with-libvpx", "with-webp", "with-x265"]
-brew "graphicsmagick"
-brew "imagemagick", args: ["with-librsvg", "with-webp"]
+# # Image tools
+# brew "ffmpeg", args: ["with-libvpx", "with-webp", "with-x265"]
+# brew "graphicsmagick"
+# brew "imagemagick", args: ["with-librsvg", "with-webp"]
 
 # Compression tools
 brew "bzip2"
@@ -80,25 +102,17 @@ brew "tccutil" # Required for setting preferences
 brew "trash"
 brew "wifi-password"
 
-# Server stack
-# brew "httpd"
-brew "dnsmasq"
-brew "percona-server"
-
 # Programming languages
 # Installing Python/Ruby with Homebrew is unnecessary,
 # as they will be installed and managed via pyenv/rbenv respectively
 brew "go"
 brew "python"
-brew "pyenv" # Python
 brew "ruby-build"
 brew "rbenv" # Ruby
 brew "nvm"
-# brew "node" # Also installs `npm`
 brew "yarn" # Faster than npm
-brew "rancher-cli"
-brew "rancher-compose"
 brew "jq"
+brew "yq"
 brew "typesafe-activator"
 
 # Network tools
@@ -113,32 +127,11 @@ brew "speedtest_cli"
 brew "sqlmap"
 
 # Install GUI applications
-# cask "adapter"
-# cask "adobe-creative-cloud"
-# cask "airdisplay"
-# cask "airserver"
-# cask "atom"
-# cask "bartender"
-# cask "boom"
-# cask "colors"
 cask "dropbox"
-# cask "flux"
-# cask "forklift" # version 3 is paid, version 2 on Mac App Store is free. Transmit alternative.
-# cask "imagealpha"
-# cask "imageoptim"
 cask "iterm2"
-# cask "itsycal"
-# cask "kaleidoscope"
-# cask "password-assistant"
-# cask "sequel-pro"
-# cask "slack"
-cask "sublime-text"
-# cask "the-unarchiver"
-# cask "transmission"
-# cask "vector-magic"
 cask "vlc"
+cask "iina"
 cask "wkhtmltopdf"
-
 cask "alfred"
 cask "charles"
 cask "discord"
@@ -149,17 +142,10 @@ cask "iterm2"
 cask "etcher"
 cask "postman"
 cask "sublime-text"
-cask "tunnelblick"
 cask "evernote"
-cask "intellij-idea"
 cask "gpgtools"
-cask "skype"
 cask "gotomeeting"
 cask "jd-gui"
-# cask "kindle" # causing issues on failed login to amazon
-cask "licecap"
-cask "macpass"
-cask "nvalt"
 cask "obs"
 cask "textexpander"
 cask "tunnelblick"
@@ -170,16 +156,12 @@ cask "wireshark"
 cask "whatsapp"
 cask "graphiql"
 cask "ngrok"
+cask "burn"
 
 # Browsers
-# cask "safari-technology-preview"
-# cask "webkit-nightly"
 cask "google-chrome"
-# cask "google-chrome-canary"
-# cask "opera"
-# cask "opera-beta"
 cask "firefox"
-# cask "firefoxnightly"
+cask "microsoft-edge"
 
 # Virtulization applications
 # cask "vmware-fusion"
@@ -187,7 +169,7 @@ cask "firefox"
 # cask "vagrant-manager"
 
 # Preference Panes
-cask "hosts"
+# cask "hosts"
 
 # Screensavers
 # cask "ios-saver"
@@ -195,9 +177,6 @@ cask "hosts"
 # Drivers
 cask "scansnap-manager-ix500"
 cask "synology-assistant"
-# cask "ios-saver"
-# cask "aerial"
-# cask "fliqlo"
 
 # Services
 cask "markdown-service-tools"
@@ -244,20 +223,36 @@ cask "font-meslo-for-powerline"
 
 
 # MAS applications
-mas "Marked 2", id: 890031187
-mas "Day One", id: 1055511498
-mas "Next", id: 896146364
-mas "Telegram", id: 747648890
-mas "Twitter", id: 409789998
-mas "Marked 2", id: 890031187
-mas "Pixelmator", id: 407963104
-mas "1Password", id: 443987910
-mas "Fantastical 2", id: 975937182
-mas "ForkLift", id: 412448059
-mas "Airmail 2", id: 918858936
-mas "Microsoft Remote Desktop", id: 715768417
 mas "Guidance", id: 412759995
+mas "Amphetamine", id: 937984704
+mas "Compressor", id: 424390742
+mas "Disk Cartography", id: 905264208
+mas "DxO OpticsPro for Photos", id: 1056077392
+mas "Edison Mail", id: 1489591003
+mas "Fantastical", id: 975937182
+mas "Final Cut Pro", id: 424389933
+mas "Gifski", id: 1351639930
+mas "GIPHY CAPTURE", id: 668208984
+mas "iMovie", id: 408981434
+mas "Jira", id: 1475897096
+mas "Magnet", id: 441258766
+mas "Marked 2", id: 890031187
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft OneNote", id: 784801555
+mas "Microsoft Outlook", id: 985367838
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Remote Desktop", id: 715768417
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "Microsoft To Do", id: 1274495053
+mas "Microsoft Word", id: 462054704
+mas "Motion", id: 434290957
+mas "OneDrive", id: 823766827
+mas "Pixelmator", id: 407963104
 mas "Slack", id: 803453959
+mas "Telegram", id: 747648890
+mas "Trello", id: 1278508951
+mas "Twitter", id: 1482454543
+mas "Xcode", id: 497799835
 
 # Apple MAS applications
 mas "Keynote", id: 409183694
