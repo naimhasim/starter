@@ -87,27 +87,27 @@ system_preferences=(
   language-region
   security-privacy
   spotlight
-#  notifications
+  notifications
 #
   displays
 #  energy-saver
   keyboard
-#  # mouse
+  # mouse
 #  trackpad
   printers-scanners
-  sound
-#  # startup-disk
+#  sound
+  # startup-disk
 #
   icloud
-#  # internet-accounts
+  # internet-accounts
 #  extensions
   app-store
-#  # network
-  bluetooth
-  sharing
+  network
+#  bluetooth
+#  sharing
 #
   users-groups
-#  # parental-controls
+  # parental-controls
   siri
 #  date-time
   time-machine
@@ -131,13 +131,13 @@ done
 # Default Apps
 set_prefs activity-monitor "Activity Monitor"
 set_prefs app-store "App Store"
-# set_prefs calendar "Calendar"
+set_prefs calendar "Fantastical"
 set_prefs contacts "Contacts"
 set_prefs disk-utility "Disk Utility"
 set_prefs finder "Finder"
 set_prefs font-book "Font Book"
 #set_prefs iwork "Keynote" "Numbers" "Pages"
-#set_prefs mail "Mail"
+set_prefs mail "Edison Mail"
 #set_prefs messages "Messages"
 set_prefs photos "Photos"
 set_prefs quicktime "QuickTime Player"

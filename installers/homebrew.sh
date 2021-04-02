@@ -38,4 +38,4 @@ brew upgrade
 brew bundle --file=installers/homebrew/Brewfile
 
 # Remove outdated versions from the cellar including casks
-brew cleanup && brew prune
+brew cleanup

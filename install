@@ -18,6 +18,7 @@ INSTALLERS=(
   node
   shells
   google-fonts
+  mackup
 #  safari-extensions
 )
 

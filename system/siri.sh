@@ -8,7 +8,7 @@
 defaults write com.apple.assistant.support "Assistant Enabled" -bool true
 
 # Language
-#defaults write com.apple.assistant.backedup "Session Language" -string "en-US"
+defaults write com.apple.assistant.backedup "Session Language" -string "en-US"
 
 # Voice Feedback
 # 2 : On
@@ -21,8 +21,8 @@ defaults write com.apple.assistant.support "Assistant Enabled" -bool true
 # 3 : Hold Option Space
 # 4 : Press Fn (Function) Space
 # 7 : Customize
-defaults write com.apple.Siri HotkeyTag -int 2
+defaults write com.apple.Siri HotkeyTag -int 4
 # defaults write com.apple.Siri CustomizedKeyboardShortcut
 
 # Show Siri in menu bar
-defaults write com.apple.Siri StatusMenuVisible -bool false
+defaults write com.apple.Siri StatusMenuVisible -bool true
