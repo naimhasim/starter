@@ -58,7 +58,7 @@ brew "watch"
 
 # infra as code / cloud / db tools
 brew "awscli"
-brew "awslog"
+brew "awslogs"
 brew "aws-es-proxy"
 brew "mydumper"
 brew "mysql-client"
