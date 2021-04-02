@@ -1,43 +1,36 @@
 #!/usr/bin/env bash
 
-APACHE_CONF_DIR="/etc/apache2"
+# Dynamically get Apache conf directory path
+# Should be "/etc/apache2"
+APACHE_CONF_DIR=$(apachectl -V 2>/dev/null | awk -F'=' '$1 ~ /SERVER_CONFIG_FILE/ { gsub(/"/, "", $2); print $2 }' | sed 's:/[^/]*$::')
 
 ################################################################################
 ## DNS Configuration
 
-# Create DNSmasq configuration file
-cp /usr/local/opt/dnsmasq/dnsmasq.conf.example /usr/local/etc/dnsmasq.conf
-
-# Enable DNSmasq LaunchDaemon
-sudo cp -fv /usr/local/opt/dnsmasq/*.plist /Library/LaunchDaemons
-sudo chown root /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
-
-# Write local `.dev` DNS listener to DNSmasq configuration
-cat <<HERE >> $(brew --prefix)/etc/dnsmasq.conf
+# Write local `.localhost` DNS listener to DNSmasq configuration
+cat <<EOF >> $(brew --prefix)/etc/dnsmasq.conf
 
 # Local development DNS
-address=/dev/127.0.0.1
+address=/localhost/127.0.0.1
 listen-address=127.0.0.1
-HERE
+EOF
 
-# Add `.dev` DNS resolver
+# Add `.localhost` DNS resolver
 sudo mkdir -p /etc/resolver
-sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/dev'
+sudo bash -c 'echo "nameserver 127.0.0.1" > /etc/resolver/localhost'
 
 # Load DNSmasq
-sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist
+sudo brew services start dnsmasq
 
 ################################################################################
 ## PHP Configuration
 
-# Add (Homebrew) PHP 5.6 module to Apache configuration
-sudo sed -i '' -E 's%^#LoadModule php5_module .*%&\
-LoadModule php5_module /usr/local/opt/php56/libexec/apache2/libphp5.so%' ${APACHE_CONF_DIR}/httpd.conf
+# Add (Homebrew) PHP module to Apache configuration
+sudo sed -i '' -E "s%^#LoadModule php.*_module .*%&\n\
+LoadModule php_module $(brew --prefix php)/lib/httpd/modules/libphp.so%" ${APACHE_CONF_DIR}/httpd.conf
 
-# Enable PHP LaunchAgent
-mkdir -p ~/Library/LaunchAgents
-ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents/
-launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
+# Load PHP
+sudo brew services start php
 
 ################################################################################
 ## SSL Configuration
@@ -45,10 +38,22 @@ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
 # Create SSL Direcotry
 sudo mkdir ${APACHE_CONF_DIR}/ssl
 
+# Create localhost SSL configuration file
+sudo bash -c "cat <<EOF > '${APACHE_CONF_DIR}/ssl/localhost.cnf'
+[dn]
+CN=localhost
+[req]
+distinguished_name = dn
+[EXT]
+subjectAltName=DNS:localhost,DNS:*.localhost
+keyUsage=digitalSignature\nextendedKeyUsage=serverAuth
+EOF"
+
 # Generate SSL Certificate
 sudo openssl req \
-  -x509 -nodes -days 3650 -newkey rsa:4096 \
-  -subj "/C=US/ST=/L=/O=/OU=$(logname)/CN=*.dev" \
+  -x509 -nodes -days 3650 -nodes -sha256 -newkey rsa:4096  \
+  -subj "/CN=localhost" \
+  -config "${APACHE_CONF_DIR}/ssl/localhost.cnf" \
   -keyout "${APACHE_CONF_DIR}/ssl/localhost.key" \
   -out "${APACHE_CONF_DIR}/ssl/localhost.crt"
 
@@ -92,14 +97,14 @@ sudo sed -i '' -E "s%^#(Include .*/extra/($(join '|' ${extras[@]})))%\1%g" ${APA
 sudo sed -i '' -E 's%^#(Include .*/users/\*.conf)%\1%g' ${APACHE_CONF_DIR}/extra/httpd-userdir.conf
 
 ## Create user virtual hosts file
-cat > ${APACHE_CONF_DIR}/users/$(logname).conf <<EOF
+sudo bash -c "cat <<EOF > ${APACHE_CONF_DIR}/users/$(logname).conf
 ## Default configurations
 ################################################################################
 
 # Set default charset
 AddDefaultCharset utf-8
 
-# Remove "charset=iso-8859-1" from error documents
+# Remove \"charset=iso-8859-1\" from error documents
 # https://httpd.apache.org/docs/trunk/env.html#suppress-error-charset
 SetEnvIf Host ^ suppress-error-charset
 
@@ -120,7 +125,7 @@ ServerSignature Off
     RewriteMap lowercase int:tolower
 </IfModule>
 
-<Directory "${HOME}/Sites/">
+<Directory \"${HOME}/Sites/\">
     Options Indexes MultiViews FollowSymLinks Includes
 
     # http://httpd.apache.org/docs/2.4/upgrading.html#run-time
@@ -133,8 +138,6 @@ ServerSignature Off
 ################################################################################
 
 <IfModule mod_env>
-    # Enable Magento developer mode
-    SetEnv MAGE_IS_DEVELOPER_MODE "1"
 </IfModule>
 
 
@@ -176,6 +179,11 @@ Listen 443
     ServerAlias *.*.*
     VirtualDocumentRoot ${HOME}/Sites/%-2/%-3+/
 
+    # Upgrade Insecure Requests to prevent mixed content
+    <IfModule mod_headers.c>
+        Header always set Content-Security-Policy "upgrade-insecure-requests;"
+    </IfModule>
+
     # Enable SSL
     <IfModule mod_ssl.c>
         SSLEngine on
@@ -192,6 +200,11 @@ Listen 443
     ServerAlias *.*
     VirtualDocumentRoot ${HOME}/Sites/%1/www/
 
+    # Upgrade Insecure Requests to prevent mixed content
+    <IfModule mod_headers.c>
+        Header always set Content-Security-Policy "upgrade-insecure-requests;"
+    </IfModule>
+
     # Enable SSL
     <IfModule mod_ssl.c>
         SSLEngine on
@@ -199,7 +212,7 @@ Listen 443
         SSLCertificateKeyFile ${APACHE_CONF_DIR}/ssl/localhost.key
     </IfModule>
 </VirtualHost>
-EOF
+EOF"
 
 ################################################################################
 ## Restart Services

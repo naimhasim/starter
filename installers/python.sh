@@ -13,16 +13,21 @@ python_latest=$(pyenv install -l 2>/dev/null | awk '$1 ~ /^[0-9.]*$/ {latest=$1}
 pyenv install --skip-existing $python2_latest
 pyenv install --skip-existing $python_latest
 pyenv rehash
-pyenv global $python2_latest
+pyenv global $python_latest
 
 # pip *should* be installed at this point
 hash pip 2>/dev/null || echo "Please install pip before continuing"
 
-# Upgrade pip
-pip install --upgrade pip
+pip_packages=(
+  pip
+  fonttools
+  qtfaststart
+  dnsyo
+  powerline-status
+)
 
-pip install fonttools
-pip install qtfaststart
-pip install dnsyo --upgrade
-# pip install pillow # Dependancy for visualmetrics
-pip install powerline-status
+# Loop through each package individally because
+# any errors will stop all installations
+for package in "${pip_packages[@]}"; do
+  pip install --upgrade "$package" --user
+done

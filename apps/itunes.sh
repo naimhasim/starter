@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 ###############################################################################
-# Numbers
+# iTunes
 ###############################################################################
 
-# Hotkey for "File > Export To > CSV…"
-defaults write com.apple.iWork.Numbers NSUserKeyEquivalents -dict-add "\033File\033Export To\033CSV…" '^~@s'
+# Don't automatically sync connected devices
+defaults write com.apple.itunes dontAutomaticallySyncIPods -bool true

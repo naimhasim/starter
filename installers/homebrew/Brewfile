@@ -2,12 +2,13 @@
 cask_args appdir: "/Applications"
 
 # Taps
-tap "caskroom/cask"
-tap "caskroom/fonts"
-tap "caskroom/drivers"
-tap "caskroom/versions"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-versions"
 tap "homebrew/bundle"
 tap "homebrew/core"
+tap "joeyhoer/extras"
 
 # Cask dependencies
 brew "mas"
@@ -18,16 +19,17 @@ cask "xquartz"
 # Note: Don't forget to add shells to `/etc/shells` before running `chsh`.
 brew "bash"
 brew "zsh"
+brew "antigen"
 
 # CLI utilities
 # Note: This replaces some (outdated) built-in macOS utilities with the GNU equivalents
 # Don't forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew "coreutils"
-brew "curl", args: ["with-nghttp2"]
-brew "findutils" # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
+brew "curl-openssl"
+#brew "findutils" # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
 brew "git"
 brew "grep"
-brew "gnu-sed", args: ["default-names"] # Install GNU `sed`, overwriting the built-in `sed`
+#brew "gnu-sed", args: ["default-names"] # Install GNU `sed`, overwriting the built-in `sed`
 #brew "moreutils" # Install more useful GNU utilities like `sponge`
 #brew "openssh"
 # brew "pv" # http://www.ivarch.com/programs/pv.shtml
@@ -73,11 +75,13 @@ brew "gzip"
 # Mac OS tools
 brew "duti" # Required for setting preferences (https://github.com/moretension/duti/)
 brew "imagesnap"
+brew "mackup"
 brew "tccutil" # Required for setting preferences
 brew "trash"
 brew "wifi-password"
 
 # Server stack
+# brew "httpd"
 brew "dnsmasq"
 brew "percona-server"
 
@@ -113,7 +117,7 @@ brew "sqlmap"
 # cask "adobe-creative-cloud"
 # cask "airdisplay"
 # cask "airserver"
-cask "atom"
+# cask "atom"
 # cask "bartender"
 # cask "boom"
 # cask "colors"
@@ -191,6 +195,12 @@ cask "hosts"
 # Drivers
 cask "scansnap-manager-ix500"
 cask "synology-assistant"
+# cask "ios-saver"
+# cask "aerial"
+# cask "fliqlo"
+
+# Services
+cask "markdown-service-tools"
 
 # QuickLook plugins
 cask "qlcolorcode"
