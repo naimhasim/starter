@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 ###############################################################################
 # Shells
@@ -8,8 +8,8 @@
 # sudo bash -c "which zsh bash >> /etc/shells"
 
 # Set default shell for the current user
-chsh -s "$(which zsh)"
-sudo dscl . -create /Users/$USER UserShell "$(which zsh)"
+# chsh -s "$(which zsh)"
+# sudo dscl . -create /Users/$USER UserShell "$(which zsh)"
 
 # Create antigen directory
 mkdir -p ~/.antigen
@@ -17,4 +17,4 @@ mkdir -p ~/.antigen/themes
 
 # Download Antigen
 curl -L git.io/antigen > ~/.antigen/antigen.zsh
-source ~/.antigen/antigen.zsh
+. ~/.antigen/antigen.zsh

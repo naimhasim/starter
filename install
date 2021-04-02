@@ -31,11 +31,11 @@ INSTALLERS=(
 
 # Sources all the preference files
 function source_installers {
-  declare -a files=("${!1}")
-  for file in "${files[@]}"; do
-    file="${2}${file}.sh"
-    [ -r "$file" ] && [ -f "$file" ] && source "$file"
-  done;
+  for file in "${INSTALLERS[@]}"; do
+    file="${1}${file}.sh"
+    echo 'executing '$file'.'
+    [ -r "$file" ] && [ -f "$file" ] && . "$file"
+  done
 }
 
-source_installers INSTALLERS[@] "installers/"
+source_installers "installers/"
