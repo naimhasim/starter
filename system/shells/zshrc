@@ -16,7 +16,6 @@ setup_plugins() {
     antigen bundle Tarrasch/zsh-colors
     antigen bundle KyleChamberlin/zsh_maven_plugin
     antigen bundle brew
-    antigen bundle docker
     antigen bundle go
     antigen bundle gradle
     antigen bundle heroku
