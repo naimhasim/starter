@@ -12,8 +12,8 @@ install_node() {
 hash node 2>/dev/null || install_node
 hash yarn 2>/dev/null || brew install yarn
 
-# Set global install path
-yarn config set prefix '/usr/local/'
+# Update npm
+npm update -g npm
 
 # Install Node packages
 node_packages=(
@@ -26,7 +26,6 @@ node_packages=(
 
 # Loop through each package individally because
 # any errors will stop all installations
-# yarn global add "${node_packages[@]/%/@latest}"
 for package in "${node_packages[@]}"; do
-   yarn global add "${package/%/@latest}"
+  npm install -g "$package"
 done

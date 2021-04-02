@@ -11,9 +11,10 @@
 chsh -s $(which zsh)
 sudo dscl . -create /Users/$USER UserShell $(which zsh)
 
-
 # Create antigen directory
 mkdir -p ~/.antigen
 mkdir -p ~/.antigen/themes
 
-cp system/shells/zshrc ~/.zshrc
+# Download Antigen
+curl -L git.io/antigen > ~/.antigen/antigen.zsh
+source ~/.antigen/antigen.zsh
