@@ -13,13 +13,15 @@ Starter allows users to configure these settings prior to installation, and crea
 
 ## Installation
 
+Install `Xcode` from App Store.
+
 Simply clone the repository, `cd` into the local `starter` repository and then:
 
-    source install
+    ./install
 
 To configure the various system and application preferences, `cd` into the local `starter` repository and then:
 
-    source starter
+    ./starter
 
 ## Tools
 
