@@ -5,7 +5,7 @@
 ###############################################################################
 
 install_node() {
-  nvm install node && nvm use node && nvm alias default node
+  nvm install 'lts/*' && nvm use 'lts/*' && nvm alias default 'lts/*'
 }
 
 # Node and yarn *should* be installed at this point
@@ -17,15 +17,25 @@ npm update -g npm
 
 # Install Node packages
 node_packages=(
-  bower
+  create-next-app
   create-react-app
   flow-typed
+  gatsby
+  http-server
+  lerna
+  pm2
+  renovate
   semantic-release-cli
   serve
+  serverless
+  simplehttpserver
+  sku
+  skuba
+  wrangler
 )
 
 # Loop through each package individally because
 # any errors will stop all installations
 for package in "${node_packages[@]}"; do
-  npm install -g "$package"
+  yarn global add "$package"
 done

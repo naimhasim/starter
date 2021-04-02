@@ -8,8 +8,8 @@
 # sudo bash -c "which zsh bash >> /etc/shells"
 
 # Set default shell for the current user
-chsh -s $(which zsh)
-sudo dscl . -create /Users/$USER UserShell $(which zsh)
+chsh -s "$(which zsh)"
+sudo dscl . -create /Users/$USER UserShell "$(which zsh)"
 
 # Create antigen directory
 mkdir -p ~/.antigen

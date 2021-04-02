@@ -13,12 +13,12 @@ INSTALLERS=(
   xcode # XCode __must__ be installed before Homebrew
   homebrew # Homebrew __must__ be installed before other tools
   xcode
-  ruby
-  python
+#  ruby
+#  python
   node
   shells
   google-fonts
-  safari-extensions
+#  safari-extensions
 )
 
 # Sources all the preference files
