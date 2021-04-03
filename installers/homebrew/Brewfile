@@ -10,7 +10,7 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 tap "acrogenesis/macchanger"
 tap "snyk/tap"
-tap "seek-jobs/tools"
+tap "faizhasim/tools" # forked from seek-jobs/tools
 
 # Cask dependencies
 brew "mas"
@@ -69,11 +69,29 @@ brew "dnsmasq", restart_service: true
 # dev productivity
 brew "direnv"
 brew "gomplate"
+cask "jetbrains-toolbox"
+
+# collab tools
+cask "zoom"
+cask "notion"
+cask "miro"
 
 # critical utils
 cask "1password"
 cask "1password-cli"
 
+# general utility apps
+cask "piezo"
+cask "chrysalis" # atreus keyboard
+cask "balenaetcher"
+cask "santa" # Google's security scanner tool
+cask "transmission"
+cask "kindle"
+cask "dozer" # Tool to hide status bar icons
+
+# games
+cask "epic-games"
+cask "steam"
 
 # seek only tools
 brew "seek_auth"
@@ -171,8 +189,9 @@ cask "microsoft-edge"
 # cask "ios-saver"
 
 # Drivers
-cask "fujitsu-scansnap-manager-ix500"
+cask "fujitsu-scansnap-manager"
 cask "synologyassistant"
+cask "logitech-options"
 
 # Services
 cask "markdown-service-tools"
