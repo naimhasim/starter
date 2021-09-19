@@ -5,7 +5,7 @@
 ###############################################################################
 
 install_node() {
-  nvm install 'lts/*' && nvm use 'lts/*' && nvm alias default 'lts/*'
+  n lts
 }
 
 # Node and yarn *should* be installed at this point

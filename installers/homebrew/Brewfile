@@ -129,7 +129,7 @@ brew "go"
 brew "python"
 brew "ruby-build"
 brew "rbenv" # Ruby
-brew "nvm"
+brew "n"
 brew "yarn" # Faster than npm
 brew "jq"
 brew "yq"
