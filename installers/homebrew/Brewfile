@@ -10,11 +10,9 @@ tap "homebrew/bundle"
 tap "homebrew/core"
 tap "acrogenesis/macchanger"
 tap "snyk/tap"
-tap "faizhasim/tools" # forked from seek-jobs/tools
 
 # Cask dependencies
 brew "mas"
-cask "xquartz"
 
 # Shells
 # Note: Don't forget to add shells to `/etc/shells` before running `chsh`.
@@ -46,59 +44,22 @@ brew "ack"
 brew "findutils"
 brew "gnu-tar"
 cask "session-manager-plugin"
-brew "glide"
-brew "cowsay"
-brew "figlet"
-brew "fortune"
-brew "lolcat"
-brew "starship"
-brew "telnet"
-brew "tldr"
-brew "watch"
 
 # infra as code / cloud / db tools
 brew "awscli"
-brew "awslogs"
-brew "aws-es-proxy"
-cask "aws-vault"
-brew "mydumper"
 brew "mysql-client"
-brew "terraform"
-brew "haproxy"
-brew "dnsmasq", restart_service: true
 
 # dev productivity
 brew "direnv"
 brew "gomplate"
-cask "jetbrains-toolbox"
+brew "lastpass"
 
 # collab tools
 cask "zoom"
-cask "notion"
-cask "miro"
-
-# critical utils
-cask "1password"
-cask "1password-cli"
-
-# general utility apps
-cask "piezo"
-cask "chrysalis" # atreus keyboard
-cask "balenaetcher"
-cask "santa" # Google's security scanner tool
-cask "transmission"
-cask "kindle"
-cask "dozer" # Tool to hide status bar icons
 
 # games
-cask "epic-games"
-cask "steam"
-
-# seek only tools
-brew "seek_auth"
-brew "seek_bastion"
-brew "seek_gantry"
-brew "snyk"
+# cask "epic-games"
+# cask "steam"
 
 # Other useful tools
 brew "highlight" # https://developer.atlassian.com/blog/2015/08/beautiful-presentations-with-highlight/
@@ -116,10 +77,10 @@ brew "gzip"
 
 # Mac OS tools
 brew "duti" # Required for setting preferences (https://github.com/moretension/duti/)
-brew "imagesnap"
-brew "mackup"
-brew "tccutil" # Required for setting preferences
-brew "trash"
+# brew "imagesnap"
+# brew "mackup"
+# brew "tccutil" # Required for setting preferences
+# brew "trash"
 brew "wifi-password"
 
 # Programming languages
@@ -133,9 +94,10 @@ brew "n"
 brew "yarn" # Faster than npm
 brew "jq"
 brew "yq"
+brew "php"
 
 # Network tools
-brew "namebench"
+# brew "namebench"
 brew "nmap"
 brew "speedtest_cli"
 
@@ -143,40 +105,40 @@ brew "speedtest_cli"
 # brew "foremost"
 # brew "justwatchcom/gopass/gopass"
 # brew "hashpump"
-brew "sqlmap"
+# brew "sqlmap"
 
 # Install GUI applications
-cask "dropbox"
+# cask "dropbox"
 cask "iterm2"
-cask "vlc"
+# cask "vlc"
 cask "iina"
-cask "wkhtmltopdf"
-cask "alfred"
-cask "charles"
-cask "disk-inventory-x"
-cask "dropbox"
-cask "iterm2"
+# cask "wkhtmltopdf"
+# cask "alfred"
+# cask "charles"
+# cask "disk-inventory-x"
 cask "postman"
 cask "sublime-text"
 cask "evernote"
-cask "gpg-suite"
-cask "gotomeeting"
-cask "jd-gui"
+# cask "gpg-suite"
+# cask "gotomeeting"
+# cask "jd-gui"
 cask "obs"
-cask "textexpander"
-cask "tunnelblick"
-cask "unetbootin"
+# cask "textexpander"
+# cask "tunnelblick"
+# cask "unetbootin"
 cask "visual-studio-code"
-cask "wireshark"
+# cask "wireshark"
 cask "whatsapp"
-cask "graphiql"
-cask "ngrok"
-cask "burn"
+# cask "graphiql"
+# cask "ngrok"
+# cask "burn"
+cask "laravel-kit"
 
 # Browsers
-cask "google-chrome"
-cask "firefox"
-cask "microsoft-edge"
+# cask "google-chrome"
+# cask "firefox"
+# cask "microsoft-edge"
+cask "brave-browser"
 
 # Virtulization applications
 # cask "vmware-fusion"
@@ -190,8 +152,8 @@ cask "microsoft-edge"
 # cask "ios-saver"
 
 # Drivers
-cask "fujitsu-scansnap-manager"
-cask "synologyassistant"
+# cask "fujitsu-scansnap-manager"
+# cask "synologyassistant"
 cask "logitech-options"
 
 # Services
@@ -239,35 +201,34 @@ cask "font-jetbrains-mono"
 
 # MAS applications
 mas "Guidance", id: 412759995
-mas "Amphetamine", id: 937984704
-mas "Compressor", id: 424390742
-mas "Disk Cartography", id: 905264208
-mas "DxO OpticsPro for Photos", id: 1056077392
-mas "Edison Mail", id: 1489591003
-mas "Fantastical", id: 975937182
-mas "Final Cut Pro", id: 424389933
-mas "Gifski", id: 1351639930
-mas "GIPHY CAPTURE", id: 668208984
+# mas "Amphetamine", id: 937984704
+# mas "Compressor", id: 424390742
+# mas "Disk Cartography", id: 905264208
+# mas "DxO OpticsPro for Photos", id: 1056077392
+# mas "Edison Mail", id: 1489591003
+# mas "Fantastical", id: 975937182
+# mas "Final Cut Pro", id: 424389933
+# mas "Gifski", id: 1351639930
+# mas "GIPHY CAPTURE", id: 668208984
 mas "iMovie", id: 408981434
-mas "Jira", id: 1475897096
-mas "Magnet", id: 441258766
-mas "Marked 2", id: 890031187
+# mas "Jira", id: 1475897096
+# mas "Magnet", id: 441258766
+# mas "Marked 2", id: 890031187
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555
 mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Remote Desktop", id: 715768417
-mas "Microsoft Remote Desktop", id: 1295203466
+# mas "Microsoft Remote Desktop", id: 715768417
+# mas "Microsoft Remote Desktop", id: 1295203466
 mas "Microsoft To Do", id: 1274495053
 mas "Microsoft Word", id: 462054704
-mas "Motion", id: 434290957
-mas "OneDrive", id: 823766827
-mas "Pixelmator", id: 407963104
+# mas "Motion", id: 434290957
+# mas "OneDrive", id: 823766827
+# mas "Pixelmator", id: 407963104
 mas "Slack", id: 803453959
 mas "Telegram", id: 747648890
-mas "Trello", id: 1278508951
+# mas "Trello", id: 1278508951
 mas "Twitter", id: 1482454543
-mas "Xcode", id: 497799835
 
 # Apple MAS applications
 mas "Keynote", id: 409183694
