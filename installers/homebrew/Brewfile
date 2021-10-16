@@ -44,6 +44,7 @@ brew "ack"
 brew "findutils"
 brew "gnu-tar"
 cask "session-manager-plugin"
+brew "starship"
 
 # infra as code / cloud / db tools
 brew "awscli"
@@ -220,6 +221,7 @@ mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555
 mas "Microsoft Outlook", id: 985367838
 mas "Microsoft PowerPoint", id: 462062816
+cask "microsoft-teams"
 # mas "Microsoft Remote Desktop", id: 715768417
 # mas "Microsoft Remote Desktop", id: 1295203466
 mas "Microsoft To Do", id: 1274495053
