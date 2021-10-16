@@ -52,7 +52,8 @@ brew "mysql-client"
 # dev productivity
 brew "direnv"
 brew "gomplate"
-brew "lastpass"
+cask "lastpass"
+cask "rapidminer-studio"
 
 # collab tools
 cask "zoom"
